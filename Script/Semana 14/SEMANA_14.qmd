@@ -1,0 +1,32 @@
+---
+title: "SEMANA_14"
+author: "GRUPO 6"
+format: html
+editor: visual
+---
+
+## Realizar el Análisis de regresión,Análisis univariado, Análisis multivariado.
+
+```{r}
+#1. IMPORTAR DATA
+data<- read_csv("C:/Users/s9343/Downloads/autismo.csv")
+```
+
+```{r}
+#ANÁLISIS UNIVARIADO
+summary(data$Puntuacion_P1)
+summary(data$Puntuacion_P2)
+summary(data$Puntuacion_P3)
+```
+
+```{r}
+#ANALISIS DE REGRESIÓN SIMPLE
+modelo_simple<-lm(Puntuacion_P1 ~ Edad, data = data)
+summary(modelo_simple)
+```
+
+```{r}
+#ANÁLISIS MULTIVARIADO
+modelo_multi <- lm(Puntuacion_P1 ~ Edad + Puntuacion_P2 + Puntuacion_P3, data = data)
+summary(modelo_multi)
+```
